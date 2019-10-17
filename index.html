@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Project-2-Client</title>
+  <!-- stuff I don't wanna mess with -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+<body>
+  <h1>Welcome to Leader (Onward)</h1>
+  <!-- forms and their buttons (each with a different id) -->
+  <form id="sign-in">
+    <input type="email" name="credentials[email]" placeholder="Enter Email...">
+    <input type="password" name="credentials[password]" placeholder="Enter Password...">
+    <button>Sign In</button>
+  </form>
+  <form id="sign-up">
+    <input type="email" name="credentials[email]" placeholder="Enter Email...">
+    <input type="password" name="credentials[password]" placeholder="Enter Password...">
+    <input type="password" name="credentials[password_confirmation]" placeholder="Confrimation...">
+    <button>Sign Up</button>
+  </form>
+  <form id="change-password">
+    <input type="password" name="passwords[old]" placeholder="Enter Old Password...">
+    <input type="password" name="passwords[new]" placeholder="Enter New Password...">
+    <button>Change Password</button>
+  </form>
+  <form id="sign-out">
+    <button>Sign Out</button>
+  </form>
+  <section class="message-section">
+  <h4 id="message"></h4>
+</section>
+</body>
+
 </html>
