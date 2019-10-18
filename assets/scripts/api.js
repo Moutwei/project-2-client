@@ -37,6 +37,9 @@ const signOut = () => {
 }
 
 // *********** API ***********
+
+// ******** leaders ********
+
 const createLeader = (formData) => {
   return $.ajax({
     method: 'POST',
@@ -84,6 +87,57 @@ const updateLeader = (formData) => {
     data: formData
   })
 }
+
+// ******** projects ********
+
+const createProject = (formData) => {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/projects',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+const deleteProject = (formData) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/projects/' + formData.project.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const indexProjects = () => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/projects',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const showProject = (formData) => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/projects/' + formData.project.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const updateProject = (formData) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/projects/' + formData.project.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -93,5 +147,10 @@ module.exports = {
   deleteLeader,
   indexLeaders,
   showLeader,
-  updateLeader
+  updateLeader,
+  createProject,
+  deleteProject,
+  indexProjects,
+  showProject,
+  updateProject
 }

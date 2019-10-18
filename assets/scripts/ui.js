@@ -43,6 +43,9 @@ const onSignOutFailure = () => {
 }
 
 // *********** API ***********
+
+// ******** leaders ********
+
 const onCreateLeaderSuccess = () => {
   successMessage('Created Leader Successfully')
 }
@@ -76,6 +79,41 @@ const onUpdateLeaderFailure = () => {
   failureMessage('Update Leader Failed')
 }
 
+// ******** projects ********
+
+const onCreateProjectSuccess = () => {
+  successMessage('Created Project Successfully')
+}
+const onCreateProjectFailure = () => {
+  failureMessage('Create Project Failed')
+}
+const onDeleteProjectSuccess = () => {
+  successMessage('Deleted Project Successfully')
+}
+const onDeleteProjectFailure = () => {
+  failureMessage('Delete Project Failed')
+}
+const onIndexProjectsSuccess = (indexedProjects) => {
+  successMessage('Indexed Projects Successfully')
+  console.log(indexedProjects.projects)
+}
+const onIndexProjectsFailure = () => {
+  failureMessage('Index Projects Failed')
+}
+const onShowProjectSuccess = (indexedLeaders) => {
+  successMessage('Showed Project Successfully')
+  console.log(indexedLeaders.leader)
+}
+const onShowProjectFailure = () => {
+  failureMessage('Show Project Failed')
+}
+const onUpdateProjectSuccess = () => {
+  successMessage('Updated Project Successfully')
+}
+const onUpdateProjectFailure = () => {
+  failureMessage('Update Project Failed')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -94,5 +132,15 @@ module.exports = {
   onShowLeaderSuccess,
   onShowLeaderFailure,
   onUpdateLeaderSuccess,
-  onUpdateLeaderFailure
+  onUpdateLeaderFailure,
+  onCreateProjectSuccess,
+  onCreateProjectFailure,
+  onDeleteProjectSuccess,
+  onDeleteProjectFailure,
+  onIndexProjectsSuccess,
+  onIndexProjectsFailure,
+  onShowProjectSuccess,
+  onShowProjectFailure,
+  onUpdateProjectSuccess,
+  onUpdateProjectFailure
 }

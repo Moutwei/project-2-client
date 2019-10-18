@@ -39,6 +39,9 @@ const onSignOut = (event) => {
     .catch(ui.onSignOutFailure)
 }
 // *********** API ***********
+
+// ******** leaders ********
+
 const onCreateLeader = (event) => {
   event.preventDefault() // stops page refresh
   //
@@ -86,6 +89,55 @@ const onUpdateLeader = (event) => {
     .catch(ui.onUpdateLeaderFailure)
 }
 
+// ******** projects ********
+
+const onCreateProject = (event) => {
+  event.preventDefault() // stops page refresh
+  //
+  const formData = getFormFields(event.target) // gives us the data entered
+  console.log(formData)
+  //
+  api.createProject(formData)
+    .then(ui.onCreateProjectSuccess)
+    .catch(ui.onCreateProjectFailure)
+}
+const onDeleteProject = (event) => {
+  event.preventDefault() // stops page refresh
+  const formData = getFormFields(event.target) // gives us the data entered
+  console.log(formData)
+  //
+  api.deleteProject(formData)
+    .then(ui.onDeleteProjectSuccess)
+    .catch(ui.onDeleteProjectFailure)
+}
+const onIndexProjects = () => {
+  event.preventDefault() // stops page refresh
+  //
+  api.indexProjects()
+    .then(ui.onIndexProjectsSuccess)
+    .catch(ui.onIndexProjectsFailure)
+}
+const onShowProject = (event) => {
+  event.preventDefault() // stops page refresh
+  //
+  const formData = getFormFields(event.target) // gives us the data entered
+  console.log(formData)
+  //
+  api.showProject(formData)
+    .then(ui.onShowProjectSuccess)
+    .catch(ui.onShowProjectFailure)
+}
+const onUpdateProject = (event) => {
+  event.preventDefault() // stops page refresh
+  //
+  const formData = getFormFields(event.target) // gives us the data entered
+  console.log(formData)
+  //
+  api.updateProject(formData)
+    .then(ui.onUpdateProjectSuccess)
+    .catch(ui.onUpdateProjectFailure)
+}
+
 module.exports = {
   onSignIn,
   onSignUp,
@@ -95,5 +147,10 @@ module.exports = {
   onDeleteLeader,
   onIndexLeaders,
   onShowLeader,
-  onUpdateLeader
+  onUpdateLeader,
+  onCreateProject,
+  onDeleteProject,
+  onIndexProjects,
+  onShowProject,
+  onUpdateProject
 }
