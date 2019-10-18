@@ -32,6 +32,36 @@
   <form id="sign-out">
     <button>Sign Out</button>
   </form>
+  <!-- API Section -->
+  <form id="create-leader">
+    <input type="text" name="leader[name]" placeholder="Enter Name...">
+    <input type="email" name="leader[email]" placeholder="Enter Email...">
+    <input type="text" name="leader[phone]" placeholder="Enter Phone...">
+    <input type="text" name="leader[skills]" placeholder="Enter Skills...">
+    <input type="number" name="leader[completed_projects]" step=".5" placeholder="Completed Projects...">
+    <button>Create Leader</button>
+  </form>
+  <form id="delete-leader">
+    <input type="number" name="leader[id]" step=".5" placeholder="Enter Leader ID...">
+    <button>Delete Leader</button>
+  </form>
+  <form id="index-leaders">
+    <button>Index Leaders</button>
+  </form>
+  <form id="show-leader">
+    <input type="number" name="leader[id]" step=".5" placeholder="Enter Leader ID...">
+    <button>Show Leader</button>
+  </form>
+  <form id="update-leader">
+    <input type="number" name="leader[id]" step=".5" placeholder="Enter Leader ID...">
+    <input type="text" name="leader[name]" placeholder="Enter Name...">
+    <input type="email" name="leader[email]" placeholder="Enter Email...">
+    <input type="text" name="leader[phone]" placeholder="Enter Phone...">
+    <input type="text" name="leader[skills]" placeholder="Enter Skills...">
+    <input type="number" name="leader[completed_projects]" step=".5" placeholder="Completed Projects...">
+    <button>Update Leader</button>
+  </form>
+  <!-- message display -->
   <section class="message-section">
   <h4 id="message"></h4>
 </section>

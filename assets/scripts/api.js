@@ -1,6 +1,7 @@
 const config = require('./config.js')
 const store = require('./store.js')
 
+// *********** authorization ***********
 const signUp = (formData) => {
   return $.ajax({
     method: 'POST',
@@ -34,9 +35,63 @@ const signOut = () => {
     }
   })
 }
+
+// *********** API ***********
+const createLeader = (formData) => {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/leaders',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+const deleteLeader = (formData) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/leaders/' + formData.leader.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const indexLeaders = () => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/leaders',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const showLeader = (formData) => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/leaders/' + formData.leader.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const updateLeader = (formData) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/leaders/' + formData.leader.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createLeader,
+  deleteLeader,
+  indexLeaders,
+  showLeader,
+  updateLeader
 }
