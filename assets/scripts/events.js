@@ -187,6 +187,29 @@ const onUpdateEmployee = (event) => {
     .catch(ui.onUpdateEmployeeFailure)
 }
 
+// ******** buttons ********
+
+const onSignInButton = (event) => {
+  $('#sign-in').show()
+}
+const onSignUpButton = (event) => {
+  $('#sign-up').show()
+}
+const onChangePasswordButton = (event) => {
+  $('#change-password').show()
+}
+const onSignOutButton = (event) => {
+  $('#sign-out').show()
+}
+const leadersButton = (event) => {
+  $('#leader-section').show()
+}
+const projectsButton = (event) => {
+  $('#project-section').show()
+}
+const employeesButton = (event) => {
+  $('#employee-section').show()
+}
 module.exports = {
   onSignIn,
   onSignUp,
@@ -206,5 +229,12 @@ module.exports = {
   onDeleteEmployee,
   onIndexEmployees,
   onShowEmployee,
-  onUpdateEmployee
+  onUpdateEmployee,
+  onSignInButton,
+  onSignUpButton,
+  onChangePasswordButton,
+  onSignOutButton,
+  leadersButton,
+  projectsButton,
+  employeesButton
 }
