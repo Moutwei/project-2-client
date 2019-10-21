@@ -2,6 +2,14 @@
 
 const store = require('./store.js')
 
+$('#sign-in').hide()
+$('#sign-up').hide()
+$('#change-password').hide()
+$('#sign-out').hide()
+$('#leader-section').hide()
+$('#project-section').hide()
+$('#employee-section').hide()
+
 const successMessage = (newText) => {
   $('#message').text(newText)
   $('#message').removeClass('failure')

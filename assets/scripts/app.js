@@ -29,4 +29,13 @@ $(() => {
   $('#index-employees').on('submit', events.onIndexEmployees)
   $('#show-employee').on('submit', events.onShowEmployee)
   $('#update-employee').on('submit', events.onUpdateEmployee)
+  // buttons
+  $('#sign-in-button').on('click', events.onSignInButton)
+  $('#sign-up-button').on('click', events.onSignUpButton)
+  $('#change-password-button').on('click', events.onChangePasswordButton)
+  $('#sign-out-button').on('click', events.onSignOutButton)
+
+  $('#leaders-button').on('click', events.leadersButton)
+  $('#projects-button').on('click', events.projectsButton)
+  $('#employees-button').on('click', events.employeesButton)
 })
