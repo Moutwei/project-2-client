@@ -23,4 +23,10 @@ $(() => {
   $('#index-projects').on('submit', events.onIndexProjects)
   $('#show-project').on('submit', events.onShowProject)
   $('#update-project').on('submit', events.onUpdateProject)
+  // employees
+  $('#create-employee').on('submit', events.onCreateEmployee)
+  $('#delete-employee').on('submit', events.onDeleteEmployee)
+  $('#index-employees').on('submit', events.onIndexEmployees)
+  $('#show-employee').on('submit', events.onShowEmployee)
+  $('#update-employee').on('submit', events.onUpdateEmployee)
 })

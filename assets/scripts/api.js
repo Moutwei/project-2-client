@@ -9,11 +9,16 @@ const signUp = (formData) => {
     data: formData
   })
 }
+let globalId = null
 const signIn = (formData) => {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
-    data: formData
+    data: formData,
+    success: function (formData) {
+      globalId = formData.user.id
+      return globalId
+    }
   })
 }
 const changePassword = (formData) => {
@@ -138,6 +143,57 @@ const updateProject = (formData) => {
   })
 }
 
+// ******** employees ********
+
+const createEmployee = (formData) => {
+  // IM SO PROUD THANK YOU *JOSH*
+  formData.employee.user_id = globalId
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/employees',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+const deleteEmployee = (formData) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/employees/' + formData.employee.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const indexEmployees = () => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/employees',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const showEmployee = (formData) => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/employees/' + formData.employee.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const updateEmployee = (formData) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/employees/' + formData.employee.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
 module.exports = {
   signUp,
   signIn,
@@ -152,5 +208,10 @@ module.exports = {
   deleteProject,
   indexProjects,
   showProject,
-  updateProject
+  updateProject,
+  createEmployee,
+  deleteEmployee,
+  indexEmployees,
+  showEmployee,
+  updateEmployee
 }

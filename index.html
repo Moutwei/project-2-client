@@ -74,7 +74,6 @@
     <input type="text" name="project[mission]" placeholder="Enter Mission...">
     <input type="date" name="project[target]" placeholder="Enter Target...">
     <input type="text" name="project[requirements]" placeholder="Enter Requirements...">
-    <input type="text" name="project[status]" placeholder="Enter Status...">
     <input type="number" name="project[leader_id]" step=".5" placeholder="Enter Leader ID...">
     <button>Create Project</button>
   </form>
@@ -95,9 +94,37 @@
     <input type="text" name="project[mission]" placeholder="Enter Mission...">
     <input type="date" name="project[target]" placeholder="Enter Target...">
     <input type="text" name="project[requirements]" placeholder="Enter Requirements...">
-    <input type="text" name="project[status]" placeholder="Enter Status...">
     <input type="number" name="project[leader_id]" step=".5" placeholder="Enter Leader ID...">
     <button>Update Project</button>
+  </form>
+  <hr>
+
+  <!-- employees -->
+  <form id="create-employee">
+    <input type="text" name="employee[name]" placeholder="Enter Name...">
+    <input type="text" name="employee[task]" placeholder="Enter Task...">
+    <input type="text" name="employee[status]" placeholder="Enter Task Status...">
+    <input type="number" name="employee[project_id]" step=".5" placeholder="Enter Project ID...">
+    <button>Create Employee</button>
+  </form>
+  <form id="delete-employee">
+    <input type="number" name="employee[id]" step=".5" placeholder="Enter Employee ID...">
+    <button>Delete Employee</button>
+  </form>
+  <form id="index-employees">
+    <button>Index Employees</button>
+  </form>
+  <form id="show-employee">
+    <input type="number" name="employee[id]" step=".5" placeholder="Enter Employee ID...">
+    <button>Show Employee</button>
+  </form>
+  <form id="update-employee">
+    <input type="number" name="employee[id]" step=".5" placeholder="Enter Employee ID...">
+    <input type="text" name="employee[name]" placeholder="Enter Name...">
+    <input type="text" name="employee[task]" placeholder="Enter Task...">
+    <input type="text" name="employee[status]" placeholder="Enter Task Status...">
+    <input type="number" name="employee[project_id]" step=".5" placeholder="Enter Project ID...">
+    <button>Update Employee</button>
   </form>
   <!-- message display -->
   <section class="message-section">

@@ -138,6 +138,55 @@ const onUpdateProject = (event) => {
     .catch(ui.onUpdateProjectFailure)
 }
 
+// ******** employees ********
+
+const onCreateEmployee = (event) => {
+  event.preventDefault() // stops page refresh
+  //
+  const formData = getFormFields(event.target) // gives us the data entered
+  console.log(formData)
+  //
+  api.createEmployee(formData)
+    .then(ui.onCreateEmployeeSuccess)
+    .catch(ui.onCreateEmployeeFailure)
+}
+const onDeleteEmployee = (event) => {
+  event.preventDefault() // stops page refresh
+  const formData = getFormFields(event.target) // gives us the data entered
+  console.log(formData)
+  //
+  api.deleteEmployee(formData)
+    .then(ui.onDeleteEmployeeSuccess)
+    .catch(ui.onDeleteEmployeeFailure)
+}
+const onIndexEmployees = () => {
+  event.preventDefault() // stops page refresh
+  //
+  api.indexEmployees()
+    .then(ui.onIndexEmployeesSuccess)
+    .catch(ui.onIndexEmployeesFailure)
+}
+const onShowEmployee = (event) => {
+  event.preventDefault() // stops page refresh
+  //
+  const formData = getFormFields(event.target) // gives us the data entered
+  console.log(formData)
+  //
+  api.showEmployee(formData)
+    .then(ui.onShowEmployeeSuccess)
+    .catch(ui.onShowEmployeeFailure)
+}
+const onUpdateEmployee = (event) => {
+  event.preventDefault() // stops page refresh
+  //
+  const formData = getFormFields(event.target) // gives us the data entered
+  console.log(formData)
+  //
+  api.updateEmployee(formData)
+    .then(ui.onUpdateEmployeeSuccess)
+    .catch(ui.onUpdateEmployeeFailure)
+}
+
 module.exports = {
   onSignIn,
   onSignUp,
@@ -152,5 +201,10 @@ module.exports = {
   onDeleteProject,
   onIndexProjects,
   onShowProject,
-  onUpdateProject
+  onUpdateProject,
+  onCreateEmployee,
+  onDeleteEmployee,
+  onIndexEmployees,
+  onShowEmployee,
+  onUpdateEmployee
 }

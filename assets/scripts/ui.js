@@ -100,9 +100,9 @@ const onIndexProjectsSuccess = (indexedProjects) => {
 const onIndexProjectsFailure = () => {
   failureMessage('Index Projects Failed')
 }
-const onShowProjectSuccess = (indexedLeaders) => {
+const onShowProjectSuccess = (indexedProjects) => {
   successMessage('Showed Project Successfully')
-  console.log(indexedLeaders.leader)
+  console.log(indexedProjects.project)
 }
 const onShowProjectFailure = () => {
   failureMessage('Show Project Failed')
@@ -112,6 +112,41 @@ const onUpdateProjectSuccess = () => {
 }
 const onUpdateProjectFailure = () => {
   failureMessage('Update Project Failed')
+}
+
+// ******** employees ********
+
+const onCreateEmployeeSuccess = () => {
+  successMessage('Created Employee Successfully')
+}
+const onCreateEmployeeFailure = () => {
+  failureMessage('Create Employee Failed')
+}
+const onDeleteEmployeeSuccess = () => {
+  successMessage('Deleted Employee Successfully')
+}
+const onDeleteEmployeeFailure = () => {
+  failureMessage('Delete Employee Failed')
+}
+const onIndexEmployeesSuccess = (indexedEmployees) => {
+  successMessage('Indexed Employees Successfully')
+  console.log(indexedEmployees.employees)
+}
+const onIndexEmployeesFailure = () => {
+  failureMessage('Index Employees Failed')
+}
+const onShowEmployeeSuccess = (indexedEmployees) => {
+  successMessage('Showed Employee Successfully')
+  console.log(indexedEmployees.employee)
+}
+const onShowEmployeeFailure = () => {
+  failureMessage('Show Employee Failed')
+}
+const onUpdateEmployeeSuccess = () => {
+  successMessage('Updated Employee Successfully')
+}
+const onUpdateEmployeeFailure = () => {
+  failureMessage('Update Employee Failed')
 }
 
 module.exports = {
@@ -142,5 +177,15 @@ module.exports = {
   onShowProjectSuccess,
   onShowProjectFailure,
   onUpdateProjectSuccess,
-  onUpdateProjectFailure
+  onUpdateProjectFailure,
+  onCreateEmployeeSuccess,
+  onCreateEmployeeFailure,
+  onDeleteEmployeeSuccess,
+  onDeleteEmployeeFailure,
+  onIndexEmployeesSuccess,
+  onIndexEmployeesFailure,
+  onShowEmployeeSuccess,
+  onShowEmployeeFailure,
+  onUpdateEmployeeSuccess,
+  onUpdateEmployeeFailure
 }
