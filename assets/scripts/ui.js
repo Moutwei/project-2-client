@@ -60,7 +60,12 @@ const onDeleteLeaderFailure = () => {
 }
 const onIndexLeadersSuccess = (indexedLeaders) => {
   successMessage('Indexed Leaders Successfully')
+  // Index Function
   console.log(indexedLeaders.leaders)
+  const data = indexedLeaders.leaders
+  data.forEach(function (leader) {
+    $('#data').append('<p>' + leader.name + ' ID: ' + leader.id + '</p>')
+  })
 }
 const onIndexLeadersFailure = () => {
   failureMessage('Index Leaders Failed')
@@ -68,6 +73,9 @@ const onIndexLeadersFailure = () => {
 const onShowLeaderSuccess = (indexedLeaders) => {
   successMessage('Showed Leader Successfully')
   console.log(indexedLeaders.leader)
+  // Show Function
+  const data = indexedLeaders.leader
+  $('#data').append('<p>' + data.name + ' ID: ' + data.id + '</p>')
 }
 const onShowLeaderFailure = () => {
   failureMessage('Show Leader Failed')
@@ -96,6 +104,11 @@ const onDeleteProjectFailure = () => {
 const onIndexProjectsSuccess = (indexedProjects) => {
   successMessage('Indexed Projects Successfully')
   console.log(indexedProjects.projects)
+  // Index Function
+  const data = indexedProjects.projects
+  data.forEach(function (project) {
+    $('#data').append('<p>' + project.title + ' ID: ' + project.id + ' LEADER ID: ' + project.leader_id + '</p>')
+  })
 }
 const onIndexProjectsFailure = () => {
   failureMessage('Index Projects Failed')
@@ -103,6 +116,9 @@ const onIndexProjectsFailure = () => {
 const onShowProjectSuccess = (indexedProjects) => {
   successMessage('Showed Project Successfully')
   console.log(indexedProjects.project)
+  // Show Function
+  const data = indexedProjects.project
+  $('#data').append('<p>' + data.title + ' ID: ' + data.id + ' LEADER ID: ' + data.leader_id + '</p>')
 }
 const onShowProjectFailure = () => {
   failureMessage('Show Project Failed')
@@ -131,6 +147,11 @@ const onDeleteEmployeeFailure = () => {
 const onIndexEmployeesSuccess = (indexedEmployees) => {
   successMessage('Indexed Employees Successfully')
   console.log(indexedEmployees.employees)
+  // Index Function
+  const data = indexedEmployees.employees
+  data.forEach(function (employee) {
+    $('#data').append('<p>' + employee.name + ' TASK: ' + employee.task + ' EMPLOYEE ID: ' + employee.id + '</p>')
+  })
 }
 const onIndexEmployeesFailure = () => {
   failureMessage('Index Employees Failed')
@@ -138,6 +159,9 @@ const onIndexEmployeesFailure = () => {
 const onShowEmployeeSuccess = (indexedEmployees) => {
   successMessage('Showed Employee Successfully')
   console.log(indexedEmployees.employee)
+  // Show Function
+  const data = indexedEmployees.employee
+  $('#data').append('<p>' + data.name + ' TASK: ' + data.task + ' EMPLOYEE ID: ' + data.id + '</p>')
 }
 const onShowEmployeeFailure = () => {
   failureMessage('Show Employee Failed')
