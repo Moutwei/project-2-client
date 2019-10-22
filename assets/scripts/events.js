@@ -189,26 +189,75 @@ const onUpdateEmployee = (event) => {
 
 // ******** buttons ********
 
+// this is a function that hides everything!
+const hideEverything = () => {
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#leader-section').hide()
+  $('#project-section').hide()
+  $('#employee-section').hide()
+  $('#leaders-button').hide()
+  $('#projects-button').hide()
+  $('#employees-button').hide()
+  $('#change-password-button').hide()
+  $('#sign-out-button').hide()
+  $('#cancel-button').hide()
+}
+
 const onSignInButton = (event) => {
+  hideEverything()
   $('#sign-in').show()
+  $('#cancel-button').show()
+  $('#sign-in-button').hide()
+  $('#sign-up-button').hide()
+  $('#message').html('')
 }
 const onSignUpButton = (event) => {
+  hideEverything()
   $('#sign-up').show()
+  $('#cancel-button').show()
+  $('#sign-in-button').hide()
+  $('#sign-up-button').hide()
 }
 const onChangePasswordButton = (event) => {
+  hideEverything()
   $('#change-password').show()
-}
-const onSignOutButton = (event) => {
-  $('#sign-out').show()
+  $('#cancel-button').show()
 }
 const leadersButton = (event) => {
+  hideEverything()
+  $('#change-password-button').show()
+  $('#sign-out').show()
   $('#leader-section').show()
+  $('#leaders-button').show()
+  $('#projects-button').show()
+  $('#employees-button').show()
 }
 const projectsButton = (event) => {
+  hideEverything()
+  $('#change-password-button').show()
+  $('#sign-out').show()
   $('#project-section').show()
+  $('#leaders-button').show()
+  $('#projects-button').show()
+  $('#employees-button').show()
 }
 const employeesButton = (event) => {
+  hideEverything()
+  $('#change-password-button').show()
+  $('#sign-out').show()
   $('#employee-section').show()
+  $('#leaders-button').show()
+  $('#projects-button').show()
+  $('#employees-button').show()
+}
+const cancelButton = (event) => {
+  hideEverything()
+  $('#sign-in-button').show()
+  $('#sign-up-button').show()
+  $('#message').html('')
 }
 module.exports = {
   onSignIn,
@@ -233,8 +282,8 @@ module.exports = {
   onSignInButton,
   onSignUpButton,
   onChangePasswordButton,
-  onSignOutButton,
   leadersButton,
   projectsButton,
-  employeesButton
+  employeesButton,
+  cancelButton
 }

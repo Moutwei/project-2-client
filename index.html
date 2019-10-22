@@ -11,7 +11,10 @@
 </head>
 
 <body>
-  <h1>Welcome to Leader (Onward)</h1>
+  <h1>ONWARD</h1>
+  <h5>AN APP FOR CEO'S</h5>
+  <hr>
+
   <!-- forms and their buttons (each with a different id) -->
   <form id="sign-in">
     <input type="email" name="credentials[email]" placeholder="Enter Email...">
@@ -29,12 +32,8 @@
     <input type="password" name="passwords[new]" placeholder="Enter New Password...">
     <button>Change Password</button>
   </form>
-  <form id="sign-out">
-    <button>Sign Out</button>
-  </form>
-  <!-- API Section -->
 
-  <hr>
+  <!-- API Section -->
 
   <!-- leaders -->
   <section id="leader-section">
@@ -68,8 +67,6 @@
     </form>
   </section>
 
-  <hr>
-
   <!-- projects -->
   <section id="project-section">
     <form id="create-project">
@@ -101,8 +98,6 @@
       <button>Update Project</button>
     </form>
   </section>
-
-  <hr>
 
   <!-- employees -->
   <section id="employee-section">
@@ -136,26 +131,21 @@
 
   <!-- These are for SHOWING or HIDING ONLY -->
   <section id="buttons">
-
     <button id="sign-in-button">Sign In</button>
     <button id="sign-up-button">Sign Up</button>
     <button id="change-password-button">Change Password</button>
-    <button id="sign-out-button">Sign Out</button>
+
+    <button id="sign-out">Sign Out</button>
+    <button id="cancel-button">Cancel</button>
 
     <button id="leaders-button">Leaders</button>
-
     <button id="projects-button">Projects</button>
-
     <button id="employees-button">Employees</button>
-
   </section>
+
   <!-- message display -->
   <section class="message-section">
     <h4 id="message"></h4>
-  </section>
-<!-- handlebars display -->
-  <section class="handlebars-section">
-    <h5 id="data"></h5>
   </section>
 </body>
 

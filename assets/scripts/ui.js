@@ -2,13 +2,24 @@
 
 const store = require('./store.js')
 
-$('#sign-in').hide()
-$('#sign-up').hide()
-$('#change-password').hide()
-$('#sign-out').hide()
-$('#leader-section').hide()
-$('#project-section').hide()
-$('#employee-section').hide()
+// hides everything except sign in and sign up
+const hideEverything = () => {
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#leader-section').hide()
+  $('#project-section').hide()
+  $('#employee-section').hide()
+  $('#leaders-button').hide()
+  $('#projects-button').hide()
+  $('#employees-button').hide()
+  $('#change-password-button').hide()
+  $('#cancel-button').hide()
+}
+
+// initializes page to be hide all forms first
+hideEverything()
 
 const successMessage = (newText) => {
   $('#message').text(newText)
@@ -25,6 +36,9 @@ const failureMessage = newText => {
 // *********** authorization ***********
 const onSignUpSuccess = () => {
   successMessage('Sign Up Success, Please Sign In')
+  hideEverything()
+  $('#sign-in').show()
+  $('#cancel-button').show()
 }
 const onSignUpFailure = () => {
   failureMessage('Sign Up Failed')
@@ -33,18 +47,34 @@ const onSignInSuccess = (responseData) => {
   successMessage('Sign In Success')
   // essential code for allowing other methods to use the token data
   store.user = responseData.user
+
+  hideEverything()
+  $('#change-password-button').show()
+  $('#sign-out').show()
+  $('#leaders-button').show()
+  $('#projects-button').show()
+  $('#employees-button').show()
 }
 const onSignInFailure = () => {
   failureMessage('Sign In Failed')
 }
 const onChangePasswordSuccess = () => {
   successMessage('Password Change Success')
+  hideEverything()
+  $('#change-password-button').show()
+  $('#sign-out').show()
+  $('#leaders-button').show()
+  $('#projects-button').show()
+  $('#employees-button').show()
 }
 const onChangePasswordFailure = () => {
   failureMessage('Password Change Failed')
 }
 const onSignOutSuccess = () => {
   successMessage('Signed Out Successfully')
+  hideEverything()
+  $('#sign-in-button').show()
+  $('#sign-up-button').show()
 }
 const onSignOutFailure = () => {
   failureMessage('Sign Out Failed')
