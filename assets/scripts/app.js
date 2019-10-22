@@ -9,7 +9,7 @@ $(() => {
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
   $('#change-password').on('submit', events.onChangePassword)
-  $('#sign-out').on('submit', events.onSignOut)
+  $('#sign-out').on('click', events.onSignOut)
   // api
   // leaders
   $('#create-leader').on('submit', events.onCreateLeader)
@@ -33,9 +33,10 @@ $(() => {
   $('#sign-in-button').on('click', events.onSignInButton)
   $('#sign-up-button').on('click', events.onSignUpButton)
   $('#change-password-button').on('click', events.onChangePasswordButton)
-  $('#sign-out-button').on('click', events.onSignOutButton)
 
   $('#leaders-button').on('click', events.leadersButton)
   $('#projects-button').on('click', events.projectsButton)
   $('#employees-button').on('click', events.employeesButton)
+
+  $('#cancel-button').on('click', events.cancelButton)
 })
