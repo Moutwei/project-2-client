@@ -39,4 +39,5 @@ $(() => {
   $('#employees-button').on('click', events.employeesButton)
 
   $('#cancel-button').on('click', events.cancelButton)
+  $('#home-button').on('click', events.homeButton)
 })

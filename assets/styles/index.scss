@@ -1,1 +1,89 @@
 @import '~bootstrap/scss/bootstrap';
+
+$black: #0B0310;
+$dark: #1F2833;
+$grey: #C5C6C7;
+$light-blue: #66FCF1;
+$grey-blue: #45A29E;
+
+body {
+  padding: 10px;
+  background-color: $dark;
+}
+
+.header {
+  text-align: center;
+  margin: 8vh;
+  color: $grey;
+}
+
+.index-button {
+  width: 100%;
+}
+
+.front-page-buttons {
+    margin: 2%;
+    height: 12vh;
+    margin-top: 4%;
+}
+
+.btn-info {
+    margin: 2%;
+    height: 10vh;
+    margin-top: 1%;
+}
+
+// all forms
+.form-control {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: $grey;
+}
+
+.row {
+  justify-content: center;
+}
+
+.btn-danger {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+#change-password-button {
+  position: fixed;
+  bottom: 10px;
+  right: 100px;
+}
+
+#home-button {
+  position: fixed;
+  bottom: 10px;
+  right: 100px;
+}
+
+#info {
+  padding: 10px;
+  border-radius: 25px;
+  border: 4px solid $grey;
+  text-align: center;
+  margin-left: 8%;
+  margin-right: 8%;
+  color: $grey;
+}
+
+.message-section {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+.success {
+  color: green;
+  justify-content: center;
+}
+
+.failure {
+  color: red;
+  justify-content: center;
+}
