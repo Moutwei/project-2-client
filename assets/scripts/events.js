@@ -7,7 +7,6 @@ const ui = require('./ui.js')
 const onSignUp = (event) => {
   event.preventDefault() // stops page refresh
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
@@ -16,7 +15,6 @@ const onSignUp = (event) => {
 const onSignIn = (event) => {
   event.preventDefault() // stops page refresh
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.signIn(formData)
     .then(ui.onSignInSuccess)
@@ -25,7 +23,6 @@ const onSignIn = (event) => {
 const onChangePassword = (event) => {
   event.preventDefault() // stops page refresh
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.changePassword(formData)
     .then(ui.onChangePasswordSuccess)
@@ -46,7 +43,6 @@ const onCreateLeader = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.createLeader(formData)
     .then(ui.onCreateLeaderSuccess)
@@ -55,7 +51,6 @@ const onCreateLeader = (event) => {
 const onDeleteLeader = (event) => {
   event.preventDefault() // stops page refresh
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.deleteLeader(formData)
     .then(ui.onDeleteLeaderSuccess)
@@ -72,7 +67,6 @@ const onShowLeader = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.showLeader(formData)
     .then(ui.onShowLeaderSuccess)
@@ -82,7 +76,6 @@ const onUpdateLeader = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.updateLeader(formData)
     .then(ui.onUpdateLeaderSuccess)
@@ -95,7 +88,6 @@ const onCreateProject = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.createProject(formData)
     .then(ui.onCreateProjectSuccess)
@@ -104,7 +96,6 @@ const onCreateProject = (event) => {
 const onDeleteProject = (event) => {
   event.preventDefault() // stops page refresh
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.deleteProject(formData)
     .then(ui.onDeleteProjectSuccess)
@@ -121,7 +112,6 @@ const onShowProject = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.showProject(formData)
     .then(ui.onShowProjectSuccess)
@@ -131,7 +121,6 @@ const onUpdateProject = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.updateProject(formData)
     .then(ui.onUpdateProjectSuccess)
@@ -144,7 +133,6 @@ const onCreateEmployee = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.createEmployee(formData)
     .then(ui.onCreateEmployeeSuccess)
@@ -153,7 +141,6 @@ const onCreateEmployee = (event) => {
 const onDeleteEmployee = (event) => {
   event.preventDefault() // stops page refresh
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.deleteEmployee(formData)
     .then(ui.onDeleteEmployeeSuccess)
@@ -170,7 +157,6 @@ const onShowEmployee = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.showEmployee(formData)
     .then(ui.onShowEmployeeSuccess)
@@ -180,7 +166,6 @@ const onUpdateEmployee = (event) => {
   event.preventDefault() // stops page refresh
   //
   const formData = getFormFields(event.target) // gives us the data entered
-  console.log(formData)
   //
   api.updateEmployee(formData)
     .then(ui.onUpdateEmployeeSuccess)
@@ -204,6 +189,8 @@ const hideEverything = () => {
   $('#change-password-button').hide()
   $('#sign-out-button').hide()
   $('#cancel-button').hide()
+  $('#home-button').hide()
+  $('#info-row').hide()
 }
 
 const onSignInButton = (event) => {
@@ -224,41 +211,40 @@ const onSignUpButton = (event) => {
 const onChangePasswordButton = (event) => {
   hideEverything()
   $('#change-password').show()
-  $('#cancel-button').show()
+  $('#home-button').show()
 }
 const leadersButton = (event) => {
   hideEverything()
-  $('#change-password-button').show()
   $('#sign-out').show()
   $('#leader-section').show()
-  $('#leaders-button').show()
-  $('#projects-button').show()
-  $('#employees-button').show()
+  $('#home-button').show()
 }
 const projectsButton = (event) => {
   hideEverything()
-  $('#change-password-button').show()
   $('#sign-out').show()
   $('#project-section').show()
-  $('#leaders-button').show()
-  $('#projects-button').show()
-  $('#employees-button').show()
+  $('#home-button').show()
 }
 const employeesButton = (event) => {
   hideEverything()
-  $('#change-password-button').show()
   $('#sign-out').show()
   $('#employee-section').show()
-  $('#leaders-button').show()
-  $('#projects-button').show()
-  $('#employees-button').show()
+  $('#home-button').show()
 }
 const cancelButton = (event) => {
   hideEverything()
   $('#sign-in-button').show()
   $('#sign-up-button').show()
-  $('#message').html('')
 }
+const homeButton = (event) => {
+  hideEverything()
+  $('#sign-out').show()
+  $('#leaders-button').show()
+  $('#projects-button').show()
+  $('#employees-button').show()
+  $('#change-password-button').show()
+}
+
 module.exports = {
   onSignIn,
   onSignUp,
@@ -285,5 +271,6 @@ module.exports = {
   leadersButton,
   projectsButton,
   employeesButton,
-  cancelButton
+  cancelButton,
+  homeButton
 }

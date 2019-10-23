@@ -11,136 +11,153 @@
 </head>
 
 <body>
-  <h1>ONWARD</h1>
-  <h5>AN APP FOR CEO'S</h5>
-  <hr>
+  <div class="row header">
+    <section class="col-4">
+      <h1>ONWARD</h1>
+      <h5>AN APP FOR CEO'S</h5>
+    </section>
+  </div>
 
   <!-- forms and their buttons (each with a different id) -->
-  <form id="sign-in">
-    <input type="email" name="credentials[email]" placeholder="Enter Email...">
-    <input type="password" name="credentials[password]" placeholder="Enter Password...">
-    <button>Sign In</button>
-  </form>
-  <form id="sign-up">
-    <input type="email" name="credentials[email]" placeholder="Enter Email...">
-    <input type="password" name="credentials[password]" placeholder="Enter Password...">
-    <input type="password" name="credentials[password_confirmation]" placeholder="Confrimation...">
-    <button>Sign Up</button>
-  </form>
-  <form id="change-password">
-    <input type="password" name="passwords[old]" placeholder="Enter Old Password...">
-    <input type="password" name="passwords[new]" placeholder="Enter New Password...">
-    <button>Change Password</button>
-  </form>
+  <div class="row">
+    <form id="sign-in" class="col-4 form-group">
+      <input class="form-control" type="email" name="credentials[email]" placeholder="Enter Email...">
+      <input class="form-control" type="password" name="credentials[password]" placeholder="Enter Password...">
+      <button class="btn btn-primary">Sign In</button>
+    </form>
+    <form id="sign-up" class="col-4 form-group">
+      <input class="form-control" type="email" name="credentials[email]" placeholder="Enter Email...">
+      <input class="form-control" type="password" name="credentials[password]" placeholder="Enter Password...">
+      <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confrimation...">
+      <button class="btn btn-primary">Sign Up</button>
+    </form>
+    <form id="change-password" class="col-4 form-group">
+      <input class="form-control" type="password" name="passwords[old]" placeholder="Enter Old Password...">
+      <input class="form-control" type="password" name="passwords[new]" placeholder="Enter New Password...">
+      <button class="btn btn-primary">Change Password</button>
+    </form>
+  </div>
 
   <!-- API Section -->
 
   <!-- leaders -->
-  <section id="leader-section">
-    <form id="create-leader">
-      <input type="text" name="leader[name]" placeholder="Enter Name...">
-      <input type="email" name="leader[email]" placeholder="Enter Email...">
-      <input type="text" name="leader[phone]" placeholder="Enter Phone...">
-      <input type="text" name="leader[skills]" placeholder="Enter Skills...">
-      <input type="number" name="leader[completed_projects]" step=".5" placeholder="Completed Projects...">
-      <button>Create Leader</button>
+  <section class="row" id="leader-section">
+    <form id="create-leader" class="col-2 form-group">
+      <input class="form-control" type="text" name="leader[name]" placeholder="Name..." required>
+      <input class="form-control" type="email" name="leader[email]" placeholder="Email..." required>
+      <input class="form-control" type="text" name="leader[phone]" placeholder="Phone..." required>
+      <input class="form-control" type="text" name="leader[skills]" placeholder="Skills..." required>
+      <input class="form-control" type="number" name="leader[completed_projects]" step=".5" placeholder="Projects Done..." required>
+      <button class="btn btn-primary">Create Leader</button>
     </form>
-    <form id="delete-leader">
-      <input type="number" name="leader[id]" step=".5" placeholder="Enter Leader ID...">
-      <button>Delete Leader</button>
+    <form id="delete-leader" class="col-2 form-group">
+      <input class="form-control" type="number" name="leader[id]" step=".5" placeholder="Leader ID..." required>
+      <button class="btn btn-primary">Delete Leader</button>
     </form>
-    <form id="index-leaders">
-      <button>Index Leaders</button>
+    <form id="index-leaders" class="col-2 form-group">
+      <button class="btn btn-primary index-button">Index Leaders</button>
     </form>
-    <form id="show-leader">
-      <input type="number" name="leader[id]" step=".5" placeholder="Enter Leader ID...">
-      <button>Show Leader</button>
+    <form id="show-leader" class="col-2 form-group">
+      <input class="form-control" type="number" name="leader[id]" step=".5" placeholder="Leader ID..." required>
+      <button class="btn btn-primary">Show Leader</button>
     </form>
-    <form id="update-leader">
-      <input type="number" name="leader[id]" step=".5" placeholder="Enter Leader ID...">
-      <input type="text" name="leader[name]" placeholder="Enter Name...">
-      <input type="email" name="leader[email]" placeholder="Enter Email...">
-      <input type="text" name="leader[phone]" placeholder="Enter Phone...">
-      <input type="text" name="leader[skills]" placeholder="Enter Skills...">
-      <input type="number" name="leader[completed_projects]" step=".5" placeholder="Completed Projects...">
-      <button>Update Leader</button>
+    <form id="update-leader" class="col-2 form-group">
+      <input class="form-control" type="number" name="leader[id]" step=".5" placeholder="Leader ID..." required>
+      <input class="form-control" type="text" name="leader[name]" placeholder="Name..." required>
+      <input class="form-control" type="email" name="leader[email]" placeholder="Email..." required>
+      <input class="form-control" type="text" name="leader[phone]" placeholder="Phone..." required>
+      <input class="form-control" type="text" name="leader[skills]" placeholder="Skills..." required>
+      <input class="form-control" type="number" name="leader[completed_projects]" step=".5" placeholder="Projects Done..." required>
+      <button class="btn btn-primary">Update Leader</button>
     </form>
   </section>
 
   <!-- projects -->
-  <section id="project-section">
-    <form id="create-project">
-      <input type="text" name="project[title]" placeholder="Enter Title...">
-      <input type="text" name="project[mission]" placeholder="Enter Mission...">
-      <input type="date" name="project[target]" placeholder="Enter Target...">
-      <input type="text" name="project[requirements]" placeholder="Enter Requirements...">
-      <input type="number" name="project[leader_id]" step=".5" placeholder="Enter Leader ID...">
-      <button>Create Project</button>
+  <section id="project-section" class="row">
+    <form id="create-project" class="col-2 form-group">
+      <input class="form-control" type="text" name="project[title]" placeholder="Title..." required>
+      <input class="form-control" type="text" name="project[mission]" placeholder="Mission..." required>
+      <input class="form-control" type="date" name="project[target]" placeholder="Target..." required>
+      <input class="form-control" type="text" name="project[requirements]" placeholder="Requirements..." required>
+      <input class="form-control" type="number" name="project[leader_id]" step=".5" placeholder="Leader ID..." required>
+      <button class="btn btn-primary">Create Project</button>
     </form>
-    <form id="delete-project">
-      <input type="number" name="project[id]" step=".5" placeholder="Enter Project ID...">
-      <button>Delete Project</button>
+    <form id="delete-project" class="col-2 form-group">
+      <input class="form-control" type="number" name="project[id]" step=".5" placeholder="Project ID..." required>
+      <button class="btn btn-primary">Delete Project</button>
     </form>
-    <form id="index-projects">
-      <button>Index Projects</button>
+    <form id="index-projects" class="col-2 form-group">
+      <button class="btn btn-primary index-button">Index Projects</button>
     </form>
-    <form id="show-project">
-      <input type="number" name="project[id]" step=".5" placeholder="Enter Project ID...">
-      <button>Show Project</button>
+    <form id="show-project" class="col-2 form-group">
+      <input class="form-control" type="number" name="project[id]" step=".5" placeholder="Project ID..." required>
+      <button class="btn btn-primary">Show Project</button>
     </form>
-    <form id="update-project">
-      <input type="number" name="project[id]" step=".5" placeholder="Enter Project ID...">
-      <input type="text" name="project[title]" placeholder="Enter Title...">
-      <input type="text" name="project[mission]" placeholder="Enter Mission...">
-      <input type="date" name="project[target]" placeholder="Enter Target...">
-      <input type="text" name="project[requirements]" placeholder="Enter Requirements...">
-      <input type="number" name="project[leader_id]" step=".5" placeholder="Enter Leader ID...">
-      <button>Update Project</button>
+    <form id="update-project" class="col-2 form-group">
+      <input class="form-control" type="number" name="project[id]" step=".5" placeholder="Project ID..." required>
+      <input class="form-control" type="text" name="project[title]" placeholder="Title..." required>
+      <input class="form-control" type="text" name="project[mission]" placeholder="Mission..." required>
+      <input class="form-control" type="date" name="project[target]" placeholder="Target..." required>
+      <input class="form-control" type="text" name="project[requirements]" placeholder="Requirements..." required>
+      <input class="form-control" type="number" name="project[leader_id]" step=".5" placeholder="Leader ID..." required>
+      <button class="btn btn-primary">Update Project</button>
     </form>
   </section>
 
   <!-- employees -->
-  <section id="employee-section">
-    <form id="create-employee">
-      <input type="text" name="employee[name]" placeholder="Enter Name...">
-      <input type="text" name="employee[task]" placeholder="Enter Task...">
-      <input type="text" name="employee[status]" placeholder="Enter Task Status...">
-      <input type="number" name="employee[project_id]" step=".5" placeholder="Enter Project ID...">
-      <button>Create Employee</button>
+  <section id="employee-section" class="row">
+    <form id="create-employee" class="col-2 form-group">
+      <input class="form-control" type="text" name="employee[name]" placeholder="Name...">
+      <input class="form-control" type="text" name="employee[task]" placeholder="Task...">
+      <input class="form-control" type="text" name="employee[task_status]" placeholder="Task Status...">
+      <input class="form-control" type="number" name="employee[project_id]" step=".5" placeholder="Project ID...">
+      <button class="btn btn-primary">Create Employee</button>
     </form>
-    <form id="delete-employee">
-      <input type="number" name="employee[id]" step=".5" placeholder="Enter Employee ID...">
-      <button>Delete Employee</button>
+    <form id="delete-employee" class="col-2 form-group">
+      <input class="form-control" type="number" name="employee[id]" step=".5" placeholder="Employee ID..." required>
+      <button class="btn btn-primary">Delete Employee</button>
     </form>
-    <form id="index-employees">
-      <button>Index Employees</button>
+    <form id="index-employees" class="col-2 form-group">
+      <button class="btn btn-primary index-button">Index Employees</button>
     </form>
-    <form id="show-employee">
-      <input type="number" name="employee[id]" step=".5" placeholder="Enter Employee ID...">
-      <button>Show Employee</button>
+    <form id="show-employee" class="col-2 form-group">
+      <input class="form-control" type="number" name="employee[id]" step=".5" placeholder="Employee ID..." required>
+      <button class="btn btn-primary">Show Employee</button>
     </form>
-    <form id="update-employee">
-      <input type="number" name="employee[id]" step=".5" placeholder="Enter Employee ID...">
-      <input type="text" name="employee[name]" placeholder="Enter Name...">
-      <input type="text" name="employee[task]" placeholder="Enter Task...">
-      <input type="text" name="employee[status]" placeholder="Enter Task Status...">
-      <input type="number" name="employee[project_id]" step=".5" placeholder="Enter Project ID...">
-      <button>Update Employee</button>
+    <form id="update-employee" class="col-2 form-group">
+      <input class="form-control" type="number" name="employee[id]" step=".5" placeholder="Employee ID..." required>
+      <input class="form-control" type="text" name="employee[name]" placeholder="Name..." required>
+      <input class="form-control" type="text" name="employee[task]" placeholder="Task..." required>
+      <input class="form-control" type="text" name="employee[task_status]" placeholder="Task Status..." required>
+      <input class="form-control" type="number" name="employee[project_id]" step=".5" placeholder="Project ID..." required>
+      <button class="btn btn-primary">Update Employee</button>
     </form>
   </section>
 
   <!-- These are for SHOWING or HIDING ONLY -->
   <section id="buttons">
-    <button id="sign-in-button">Sign In</button>
-    <button id="sign-up-button">Sign Up</button>
-    <button id="change-password-button">Change Password</button>
+    <div class="row">
+      <button id="sign-in-button" class="col-3 front-page-buttons btn btn-primary">Sign In</button>
+      <button id="sign-up-button" class="col-3 front-page-buttons btn btn-primary">Sign Up</button>
 
-    <button id="sign-out">Sign Out</button>
-    <button id="cancel-button">Cancel</button>
+      <button id="change-password-button" class="btn btn-primary">Change Password</button>
+      <button id="sign-out" class="btn btn-danger">Sign Out</button>
+      <button id="cancel-button" class="btn btn-danger">Cancel</button>
+      <button id="home-button" class="btn btn-primary">Home</button>
+    </div>
+    <div class="row">
+      <button id="leaders-button" class="col-3 btn btn-info">Leaders</button>
+    </div>
+    <div class="row">
+      <button id="projects-button" class="col-3 btn btn-info">Projects</button>
+    </div>
+    <div class="row">
+      <button id="employees-button" class="col-3 btn btn-info">Employees</button>
+    </div>
+  </section>
 
-    <button id="leaders-button">Leaders</button>
-    <button id="projects-button">Projects</button>
-    <button id="employees-button">Employees</button>
+  <section id="info-row" class="row">
+    <section id="info" class="col-3"></section>
   </section>
 
   <!-- message display -->
